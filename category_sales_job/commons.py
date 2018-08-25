@@ -1,0 +1,1 @@
+pair_template = "{0}\t{1}"
