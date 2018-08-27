@@ -3,13 +3,16 @@
 JOB_NAME=$1
 INPUT_FILE=$2
 chmod +x $(pwd)/${JOB_NAME}_job/*.py
+SCRIPT_PREFIX=$(pwd)/${JOB_NAME}_job/${JOB_NAME}
 # hadoop
 hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \
--mapper $(pwd)/${JOB_NAME}_job/${JOB_NAME}_mapper.py \
--reducer $(pwd)/${JOB_NAME}_job/${JOB_NAME}_reducer.py \
--input file://${INPUT_FILE} -output output \
+-mapper ${SCRIPT_PREFIX}_mapper.py \
+-reducer ${SCRIPT_PREFIX}_reducer.py \
+-input file://${INPUT_FILE} \
+-output ${JOB_NAME}_output \
 -cmdenv PYTHONPATH="${PYTHONPATH}:$(pwd)" # to make commons.py available
-hadoop fs -cat output/part-00000
+hadoop fs -cat ${JOB_NAME}_output/part-00000
 # debug
-# cat ${INPUT_FILE} | python $(pwd)/${JOB_NAME}_job/${JOB_NAME}_mapper.py | sort | python $(pwd)/${JOB_NAME}_job/${JOB_NAME}_reducer.py
+#export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+# cat ${INPUT_FILE} | python ${SCRIPT_PREFIX}_mapper.py | sort | python ${SCRIPT_PREFIX}_reducer.py
 

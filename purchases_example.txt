@@ -23,4 +23,4 @@
 2012-01-01	09:01	Riverside	Consumer Electronics	252.88	Cash
 2012-01-01	09:01	Tulsa	Baby	205.06	Visa
 2012-01-01	09:01	Reno	Crafts	88.25	Visa
-2012-01-01	09:01	Chicago	Books	31.08	Cash
+2012-01-01	09:01	Chicago	Books		Cash
