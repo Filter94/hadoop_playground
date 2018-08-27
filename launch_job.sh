@@ -14,5 +14,4 @@ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \
 hadoop fs -cat ${JOB_NAME}_output/part-00000
 # debug
 #export PYTHONPATH="${PYTHONPATH}:$(pwd)"
-# cat ${INPUT_FILE} | python ${SCRIPT_PREFIX}_mapper.py | sort | python ${SCRIPT_PREFIX}_reducer.py
-
+#cat ${INPUT_FILE} | python ${SCRIPT_PREFIX}_mapper.py | sort | python ${SCRIPT_PREFIX}_reducer.py

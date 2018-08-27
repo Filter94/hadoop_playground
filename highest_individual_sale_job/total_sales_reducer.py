@@ -22,4 +22,3 @@ if __name__ == "__main__":
             if new_value > max_value:
                 max_value = new_value
     print_result()
-

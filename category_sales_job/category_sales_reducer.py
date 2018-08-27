@@ -21,4 +21,3 @@ if __name__ == "__main__":
         else:
             acc += new_value
     print_result()
-

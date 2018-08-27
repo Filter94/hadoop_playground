@@ -10,4 +10,3 @@ if __name__ == "__main__":
         data = line.strip().split("\t")
         if len(data) == 6:
             print pair_template.format(data[2], data[4])
-
